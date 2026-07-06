@@ -3270,6 +3270,8 @@ amac_manager_cancelled_info # 中国证券投资基金业协会-信息公示-诚
 1.18.62 fix: fix stock_market_activity_legu interface
 1.18.63 fix: fix stock_a_high_low_statistics interface
 1.18.64 fix: fix stock_buffett_index_lg interface
+1.18.65 add: add stock_lrb_bj_em, stock_xjll_bj_em interface
+1.18.65 fix: fix stock_zh_a_hist interface to support BSE stocks (8/9/4 prefix)
 """
 
 from akshare._version import __version__
@@ -4674,7 +4676,9 @@ from akshare.stock_feature.stock_report_em import (
     stock_zcfz_em,
     stock_zcfz_bj_em,
     stock_lrb_em,
+    stock_lrb_bj_em,
     stock_xjll_em,
+    stock_xjll_bj_em,
 )
 
 """

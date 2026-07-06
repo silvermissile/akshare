@@ -975,7 +975,13 @@ def stock_zh_a_hist(
     :return: 每日行情
     :rtype: pandas.DataFrame
     """
-    market_code = 1 if symbol.startswith("6") else 0
+    if symbol.startswith("6"):
+        market_code = 1
+    elif symbol.startswith(("8", "9", "4")):
+        # 北交所（含原新三板精选层 4/8 开头、BSE 新股 9 开头）
+        market_code = 0
+    else:
+        market_code = 0
     adjust_dict = {"qfq": "1", "hfq": "2", "": "0"}
     period_dict = {"daily": "101", "weekly": "102", "monthly": "103"}
     url = "https://push2his.eastmoney.com/api/qt/stock/kline/get"
